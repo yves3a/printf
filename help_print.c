@@ -25,6 +25,7 @@ int numb_print(unsigned int n)
 	{
 		return (ret);
 	}
+
 	return (ret);
 }
 
@@ -45,5 +46,5 @@ int countDigits(unsigned int numb)
 		count_dig++; /*Increment digit count.*/
 		numb /= 10; /*Remove the last digit.*/
 	}
-	return (count);
+	return (count_dig);
 }

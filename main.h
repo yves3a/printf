@@ -30,10 +30,10 @@ int X_print(va_list args);
 /*int p_print(va_list args);
 int u_print(va_list args);
 int print_F(va_list args);
-int countOctal(unsigned int num);
+int countOctal(unsigned int num);*/
 int countDigits(unsigned int num);
-int countBinary(unsigned int num);*/
-int print_number(unsigned int n);
+/*int countBinary(unsigned int num);*/
+int numb_print(unsigned int n);
 /*int rot13(va_list args);
 int rev_print(va_list args);
 int _strlen(char *);
