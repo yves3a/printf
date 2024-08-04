@@ -24,7 +24,7 @@ int c_print(va_list args);
 int s_print(va_list args);
 /**int o_print(va_list args);*/
 int d_print(va_list args);
-/*int b_print(va_list args);*/
+int b_print(va_list args);
 int x_print(va_list args);
 int X_print(va_list args);
 /*int p_print(va_list args);
@@ -32,7 +32,7 @@ int u_print(va_list args);
 int print_F(va_list args);
 int countOctal(unsigned int num);*/
 int countDigits(unsigned int num);
-/*int countBinary(unsigned int num);*/
+int countBinary(unsigned int numb);
 int numb_print(unsigned int n);
 /*int rot13(va_list args);
 int rev_print(va_list args);

@@ -48,3 +48,22 @@ int countDigits(unsigned int numb)
 	}
 	return (count_dig);
 }
+
+
+/**
+ * countBinary - it counts the number of digits passed
+ * @numb: the number to be counted.
+ *
+ * Return: count
+ */
+int countBinary(unsigned int numb)
+{
+	int count_dig = 0;
+	/*iterating through the digits of the number*/
+	while (numb > 0)
+	{
+		count_dig++;
+		numb /= 10;
+	}
+	return (count_dig); /*returns the number of digits of a number*/
+}

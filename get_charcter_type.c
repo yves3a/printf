@@ -16,6 +16,7 @@ int (*get_char(const char *specifier))(va_list)
 		{"s", s_print},
 		{"d", d_print},
 		{"i", d_print},
+		{"b", b_print},
 		{NULL, NULL}
 	};
 
