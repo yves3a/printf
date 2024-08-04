@@ -14,6 +14,8 @@ int (*get_char(const char *specifier))(va_list)
 	type_t types[] = {
 		{"c", c_print},
 		{"s", s_print},
+		{"d", d_print},
+		{"i", d_print},
 		{NULL, NULL}
 	};
 
