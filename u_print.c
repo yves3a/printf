@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * u_print - it prints an unsigned int
+ * u_print - it prints an unsigned integer
  * @args: arguments that are passed in printf function
  *
  * Return: number of chars printed otherwise -1
@@ -20,7 +20,7 @@ int u_print(va_list args)
 		_putchar('0');
 		return (1);
 	}
-	output =  print_number(numb);
+	output =  numb_print(numb);
 
 	/* determining number of characters */
 

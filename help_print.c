@@ -67,3 +67,22 @@ int countBinary(unsigned int numb)
 	}
 	return (count_dig); /*returns the number of digits of a number*/
 }
+
+/**
+ * countOctal - it counts number of  Octal numbers passed
+ * @num: the number to be checked upon
+ *
+ * Return: the number of octal number.
+ */
+
+int countOctal(unsigned int num)
+{
+	int count_num = 0;
+
+	while (num > 0)
+	{
+		count_num++;
+		num /= 8;
+	}
+	return (count_num);
+}

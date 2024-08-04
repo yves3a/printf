@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * upperHex_print - print and convert integer in hex
+ * upperHex_print - it prints and convert integer in hex
  * @numb: number to print
  * @num_bytes: pointer to count number of bytes
  *
