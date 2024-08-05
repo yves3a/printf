@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	/*Prepare the buffer to collect the formatted output.*/
 	string_buffer_init(&buf);
 
-	/* Process the format string and arguments, storing the result in the buffer,*/
+	/*Process the format string and arguments,storing the result in the buffer*/
 	/*and count the characters to be printed.*/
 	count_char = cust_print(&buf, format, args);
 

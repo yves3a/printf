@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * create_format_specifiers - Generates an array of format specifier structures.
- *
+ * create_format_specifiers - Generates an array of
+ * format specifier structures.
  * Description: This function initializes and allocates memory for an array
  * of format specifier structures. Each structure contains information about
  * a specific format type and its corresponding handler function. The function

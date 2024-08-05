@@ -3,9 +3,10 @@
  * cust_print - A helper function to implement custom formatted output.
  * @buffer: Pointer to the buffer where the formatted string is stored.
  * @format: The format string specifying how to format the output.
- * @args: The variable arguments to be formatted according to the format string.
+ * @args:The variable arguments to be formatted according to format string.
  *
- * Return: The total number of characters printed. Returns -1 if an error occurs.
+ * Return: The total number of characters printed.
+ * Returns -1 if an error occurs.
  */
 int cust_print(string_buffer *buffer, const char *format, va_list args)
 {

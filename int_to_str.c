@@ -1,6 +1,5 @@
 #include "main.h"
 #include <limits.h>
-
 /**
  * _itob - Converts an integer to a string in the specified base.
  * @numb: the number to be converted
@@ -13,15 +12,12 @@ void _itob(ssize_t numb, char *buff, int base)
 	size_t num_tp = (numb < 0) ? -numb : numb;
 	ssize_t sign = numb;
 	char digits;
-
 /* Special handling for edge cases with*/
  /* the minimum value of long and short types.*/
 	if (numb == LONG_MIN)
 		num_tp = (size_t)LONG_MAX + 1;
-
 	if (numb == SHRT_MIN)
 		num_tp = (size_t)SHRT_MAX + 1;
-
 	/*Ensure the base is valid (binary, octal, decimal, or hexadecimal).*/
 	if (base != BIN && base != OCT && base != DEC && base != HEX)
 		return;/*Exit early if the base is invalid.*/
