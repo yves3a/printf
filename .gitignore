@@ -1,0 +1,10 @@
+main.c
+!*.c
+
+!*.h
+
+!*.md
+
+!*/
+
+!.gitignore
