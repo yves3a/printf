@@ -22,7 +22,7 @@ int cust_print(string_buffer *buffer, const char *format, va_list args)
 		if (*format == '%')
 		{
 			format++;
-			if ((!_strchr("%ibducsSrRxXop", *format) && *(format + 1) == '\0')
+			if ((!str_chr("%ibducsSrRxXop", *format) && *(format + 1) == '\0')
 					|| *format == '\0')
 			{
 				safe_free(spec);

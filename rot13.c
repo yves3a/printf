@@ -12,7 +12,7 @@ char *rot13(char *str)
 	char *mp2 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	/*Iterate through each character in the string.*/
-	for (index = 0; str[i] != '\0'; index++)
+	for (index = 0; str[index] != '\0'; index++)
 	{
 		/*Loop through the ROT13 character map to find a match.*/
 		for (j = 0; mp1[j] != '\0'; j++)

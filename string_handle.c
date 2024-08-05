@@ -71,7 +71,7 @@ int handle_string_reversal(
 			return (-1); /* memory allocation failed, nothing is written */
 
 		str_len = _strlen(str);
-		_reverse_str(dup_str, str_len);
+		str_reverse(dup_str, str_len);
 		append_string(buffer, dup_str);
 		safe_free(dup_str);
 	}

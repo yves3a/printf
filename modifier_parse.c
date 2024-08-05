@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * parse_modifiers - Processes format modifiers in a format string.
  * @format: Pointer to the current position in the format string.
@@ -11,13 +10,14 @@
  * found. It stops parsing when a conversion specifier is reached or an
  * unknown character is encountered.
  *
- * Return: Pointer to the position in the format string after processing modifiers.
+ * Return: Pointer to the position in
+ * the format string after processing modifiers.
  */
 const char *parse_modifiers(const char *format, format_specifier *spec,
 	va_list args)
 {
 	/* Loop through the format string until a conversion specifier is found */
-	while (*format && !_strchr("%bidcsSrRxXuop", *format))
+	while (*format && !str_chr("%bidcsSrRxXuop", *format))
 	{
 		/* Check for '0' flag and update width */
 		if (*format == '0')
@@ -76,7 +76,6 @@ const char *parse_modifiers(const char *format, format_specifier *spec,
 	}
 	return (format);
 }
-
 /**
  * update_format - Skips digits and asterisks in the format string.
  * @format: Pointer to the current position in the format string.
@@ -90,15 +89,12 @@ const char *update_format(const char *format)
 {
 	while (isdigit(*format) || *format == '*')
 		format++;
-
 	return (format - 1);
 }
-
 /**
  * get_width_precision - Retrieves the width or precision from the format string.
  * @format: Pointer to the format string position to parse.
  * @args: List of variable arguments to obtain width/precision if specified as '*'.
- *
  * This function extracts an integer value for width or precision from the
  * format string. If the value is specified as '*', it retrieves the value
  * from the argument list.
@@ -109,11 +105,11 @@ int get_width_precision(const char *format, va_list args)
 {
 	if (isdigit(*(format)))
 	{
-		return (_atoi(format)); /* Convert numeric characters to an integer */
+		return (_atoi(format));/*Convert numeric characters to an integer*/
 	}
 	else if (*format == '*')
 	{
-		return (va_arg(args, int)); /* Retrieve width/precision from arguments */
+		return (va_arg(args, int));/*Retrieve width/precision from arguments*/
 	}
 	return (0);
 }

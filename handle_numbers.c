@@ -203,7 +203,7 @@ int neg_zero_handler(const format_specifier *spec, char *result,
 	{
 		return (0); /* memory allocation failed */
 	}
-	_reverse_str(dup_str, len);
+	str_reverse(dup_str, len);
 	append_char(buffer, '-'); /* append the negative sign */
 
 	/* get the absolute of the number */
@@ -211,7 +211,7 @@ int neg_zero_handler(const format_specifier *spec, char *result,
 
 	/* pad with the necessary amount of zeros */
 	handle_width(tmp_spec, buffer, len);
-	_reverse_str(dup_str, len - 1);
+	str_reverse(dup_str, len - 1);
 
 	/* append the updated the number */
 	append_string(buffer, dup_str);

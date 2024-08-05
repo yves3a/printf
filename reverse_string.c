@@ -17,13 +17,13 @@ void str_reverse(char *buffer, size_t len)
 	/*Calculate the midpoint of the string.*/
 	mid = len / 2;
 	/*Swap characters from the ends toward the center.*/
-	for (ind = 0; ind < mid; i++)
+	for (ind = 0; ind < mid; ind++)
 	{
 	/*Temporarily hold the current character.*/
-		j = buffer[i];
+		j = buffer[ind];
 
 		/* Swap the character with its corresponding pair from the end.*/
 		buffer[ind] = buffer[len - ind - 1];
-		buffer[len - ind - 1] = c;
+		buffer[len - ind - 1] = j;
 	}
 }
