@@ -19,59 +19,37 @@ const char *parse_modifiers(const char *format, format_specifier *spec,
 	/* Loop through the format string until a conversion specifier is found */
 	while (*format && !str_chr("%bidcsSrRxXuop", *format))
 	{
-		/* Check for '0' flag and update width */
-		if (*format == '0')
+		if (*format == '0')/* Check for '0' flag and update width */
 		{
 			spec->zero_flag = 1;
 			spec->width = get_width_precision(format + 1, args);
 			format = update_format(format);
 		}
-		/* Check for precision specifier */
-		else if (*format == '.')
+		else if (*format == '.')/* Check for precision specifier */
 		{
 			spec->precision = get_width_precision(format + 1, args);
 			format = update_format(format + 1);
 		}
 		/* Check for numeric width specifier */
 		else if (*format >= '1' && *format <= '9')
-		{
 			spec->width = get_width_precision(format, args);
 			format = update_format(format);
-		}
-		/* Check for '-' flag */
-		else if (*format == '-')
-		{
+		else if (*format == '-')/* Check for '-' flag */
 			spec->minus_flag = 1;
-		}
-		/* Check for '*' flag for width */
-		else if (*format == '*')
-		{
+		else if (*format == '*') /* Check for '*' flag for width */
 			spec->width = get_width_precision(format, args);
-		}
-		/* Check for '#' flag */
-		else if (*format == '#')
-		{
+		else if (*format == '#')/* Check for '#' flag */
 			spec->sharp_flag = 1;
-		}
-		/* Check for '+' flag */
 		else if (*format == '+')
-		{
 			spec->plus_flag = 1;
-		}
 		/* Check for space flag */
 		else if (*format == ' ')
-		{
 			spec->space_flag = 1;
-		}
 		/* Check for length modifiers */
 		else if (*format == 'l' || *format == 'h')
-		{
 			spec->length = *format;
-		}
 		else
-		{
 			return (format); /* Return if an unknown modifier is encountered */
-		}
 		format++; /* Move to the next character in the format string */
 	}
 	return (format);
@@ -92,9 +70,11 @@ const char *update_format(const char *format)
 	return (format - 1);
 }
 /**
- * get_width_precision - Retrieves the width or precision from the format string.
+ * get_width_precision - Retrieves the width or precision
+ * from the format string.
  * @format: Pointer to the format string position to parse.
- * @args: List of variable arguments to obtain width/precision if specified as '*'.
+ * @args: List of variable arguments to obtain
+ * width/precision if specified as '*'.
  * This function extracts an integer value for width or precision from the
  * format string. If the value is specified as '*', it retrieves the value
  * from the argument list.
@@ -104,12 +84,8 @@ const char *update_format(const char *format)
 int get_width_precision(const char *format, va_list args)
 {
 	if (isdigit(*(format)))
-	{
 		return (_atoi(format));/*Convert numeric characters to an integer*/
-	}
 	else if (*format == '*')
-	{
 		return (va_arg(args, int));/*Retrieve width/precision from arguments*/
-	}
 	return (0);
 }
