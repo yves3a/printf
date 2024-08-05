@@ -81,7 +81,9 @@ int cust_print(string_buffer *buffer, const char *format, va_list args);
 const char *parse_modifiers(const char *format, format_specifier *spec,
 							va_list args);
 
-/* creates an array of format specifiers and used by the multiple functions */
+/*
+ * creates an array of format specifiers and used by the multiple functions
+ */
 format_specifier *create_format_specifiers(void);
 
 /* prints the resultant string buffer */
