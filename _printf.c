@@ -1,54 +1,33 @@
-#include <stdarg.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
- * _printf - it prints the number of characters to be printed to the console.
- * @format: string format to be printed
- * Return: the number of printed characters
- *-1 when the invalid format is passed.
+ * _printf - Outputs a formatted string to the standard output.
+ * @format: The string that specifies the format.
+ *
+ * Return: he total number of characters printed,
+ * or -1 if the format string is NULL.
  */
+
 
 int _printf(const char *format, ...)
 {
-	int char_count = 0;
+	int count_char;
+	string_buffer buf;
 	va_list args;
-	int (*ptr)(va_list) = NULL;
 
-	va_start(args, format);
+	/*If the format string is NULL, return an error.*/
+	if (format == NULL)
+		return (-1);
 
-	while (*format)
-	{
-		if (*format == '%' && *(format + 1) !=  '%')
-		{
-			format++;
-			ptr = get_char(format);
-			if (*format == '\0')
-			{
-				return (-1);
-			}
-			else if (ptr == NULL)
-			{
-				_putchar('%');
-				_putchar(*format);
-				char_count = char_count + 2;
-			}
-			else
-			{
-				char_count += ptr(args);
-			}
-		}
-		else if (*format == '%' && *(format + 1) == '%')
-		{
-			format++;
-			_putchar('%');
-			char_count = char_count + 1;
-		}
-		else
-		_putchar(*format);
-		char_count++;
-		format++;
-	}
-	va_end(args);
-	return (char_count);
+	va_start(args, format);/*Begin processing variable arguments.*/
+
+	/*Prepare the buffer to collect the formatted output.*/
+	string_buffer_init(&buf);
+
+	/* Process the format string and arguments, storing the result in the buffer,*/
+	/*and count the characters to be printed.*/
+	count_char = cust_print(&buf, format, args);
+
+	va_end(args);/*Clean up the argument list.*/
+	return (count_char);
 }
