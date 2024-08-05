@@ -20,7 +20,7 @@ char *rot13(char *str)
 			/*Loop through the ROT13 character map to find a match.*/
 			if (str[index] == mp1[j])
 			{
-				str[index] = map2[j];
+				str[index] = mp2[j];
 				break;/*Exit the innerloop once the substitution is made.*/
 			}
 		}
