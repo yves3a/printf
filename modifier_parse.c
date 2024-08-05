@@ -32,8 +32,10 @@ const char *parse_modifiers(const char *format, format_specifier *spec,
 		}
 		/* Check for numeric width specifier */
 		else if (*format >= '1' && *format <= '9')
+		{
 			spec->width = get_width_precision(format, args);
 			format = update_format(format);
+		}
 		else if (*format == '-')/* Check for '-' flag */
 			spec->minus_flag = 1;
 		else if (*format == '*') /* Check for '*' flag for width */
